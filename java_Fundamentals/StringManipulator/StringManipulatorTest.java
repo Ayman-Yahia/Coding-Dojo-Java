@@ -4,12 +4,10 @@ public class StringManipulatorTest {
         System.out.println(test.trimAndConcat("   Coding ", "  Dojo  Seattle  "));
         System.out.println(test.trimAndConcat("   Coding ", "  Dojo  "));
 
-        char letter = 'g'; 
-        Integer a = test.getIndexOrNull("Coding", letter);
+        Integer a = test.getIndexOrNull("Coding", 'g');
         System.out.println(a);
 
-        String letter2 = "Dojo";
-        Integer b = test.getIndexOrNull("Coding Dojo", letter2);
+        Integer b = test.getIndexOrNull("Coding Dojo", "Dojo");
         System.out.println(b);
 
         String word = test.concatSubstring("Hello", 2, 3, "World");
