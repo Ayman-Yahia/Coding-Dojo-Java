@@ -10,7 +10,7 @@
 <body>
    <div class="container" style="margin-left:580px;margin-top:120px;">
    <p>you have visited <a href="/your_server">http://your_server</a></p>
-   <h1><c:out value="${str1}"/></h1>
+   <h1><c:out value="${counter}"/></h1>
    </div>
 
 </body>

@@ -16,9 +16,7 @@ public class HomeControler {
 	}
 	@RequestMapping("/your_server/counter")
 	public String counter(Model model,HttpSession session) {
-		Integer counter = (Integer) session.getAttribute("count");
-		String str1 = Integer.toString(counter);
-		model.addAttribute("str1", str1);
+		model.addAttribute("counter", session.getAttribute("count"));
 		return "counter.jsp";
 	}
 
