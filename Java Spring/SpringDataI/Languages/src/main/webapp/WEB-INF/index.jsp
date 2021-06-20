@@ -40,13 +40,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">     
                             <form:input path="name" placeholder="Name"/>
+                            <form:errors path="name"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                              <form:input path="creator" placeholder="Creator"/>                        </div>
+                             <form:errors path="creator"/>
                         <div class="col-md-6 mb-3">
                             <form:input path="version" placeholder="Version"/>
+                            <form:errors path="version"/>
                         </div>
                         <input type="submit" value="Submit"/>
                     </div>

@@ -49,6 +49,12 @@ public class LanguageController {
 		model.addAttribute("language", language);
 		return "edit.jsp";
 	}
+	@RequestMapping(value="/languages/{id}/edit", method=RequestMethod.POST)
+	public String edit(@PathVariable("id") Long id, Model model,@ModelAttribute("language") Language language,
+			@RequestParam(value="name") String name, @RequestParam(value="creator") String creator, @RequestParam(value="version") String version) {
+		model.addAttribute("language", languageService.updateLang(id,name,creator,version));
+		return "edit.jsp";
+	}
 
 	@RequestMapping("/languages/{id}/delete")
 	public String destory(@PathVariable("id") Long id) {
