@@ -1,6 +1,8 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>    
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,24 +12,29 @@
 <body>
 <a href="/languages/${language.id}/delete">Delete</a> <a href="/languages">Dashboard</a>
 	<div class="lang">
-        	<form action="/languages/${language.id}/edit" method="POST" >
+        	<form:form action="/languages/${language.id}/edit" method="post" modelAttribute="language">
+        	        <input type="hidden" name="_method" value="put" />
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="name">Name</label>     
-                            <input type="text" name="name" placeholder="${language.name}">
+                            <form:label path="name">Name</form:label>    
+                            <form:input path="name" placeholder="${language.name}"/>
+                            <form:errors path="name"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                             <label for="creator">creator</label>
-                             <input type="text" name="creator" placeholder="${language.creator}">                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="version">Version</label>
-                            <input type="text" name="version" placeholder="${language.version}">
+                             <form:label path="creator">creator</form:label>
+                             <form:input path="creator"/>
+                             <form:errors path="creator"/>                        
                         </div>
-                        <input type="submit" value="Submit"/>
+                        <div class="col-md-6 mb-3">
+                            <form:label path="version">version</form:label>
+                            <form:input path="version" />
+                            <form:errors path="version"/>
+                        </div>
+                        <input type="submit" value="Update"/>
                     </div>
-         		</form>
+         		</form:form>
         </div>
 
 </body>
